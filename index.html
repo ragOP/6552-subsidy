@@ -755,8 +755,8 @@ src="https://www.facebook.com/tr?id=980444656351102&ev=PageView&noscript=1"
           audio1.currentTime = 0;
           audio2.pause();
           audio2.currentTime = 0;
-          audio3.pause();
-          audio3.currentTime = 0;
+          // audio3.pause();
+          // audio3.currentTime = 0;
           audio4.pause();
           audio4.currentTime = 0;
         }
@@ -783,25 +783,11 @@ src="https://www.facebook.com/tr?id=980444656351102&ev=PageView&noscript=1"
           });
         });
 
-        // Special behavior for page 3: play audio
-        var audio3 = new Audio("audio/audio-3.mp3");
-        var page3buttons = document.querySelectorAll("#page-3 .next-button");
-        page3buttons.forEach(function (button) {
-          button.addEventListener("click", function () {
-            stopAllAudio();
-            audio3.play();
-            mixpanel.track("Page 3");
-
-            if (!ringbaInjected) {
-              ringbaInjected = true;
-              injectRingba();
-            }
-          });
-        });
+     
 
         // Special behavior for page 4: play audio
         var audio4 = new Audio("audio/audio-4.mp3");
-        var page4buttons = document.querySelectorAll("#page-4 .next-button");
+        var page4buttons = document.querySelectorAll("#page-3 .next-button");
         page4buttons.forEach(function (button) {
           button.addEventListener("click", function () {
             gtag_report_conversion();
